@@ -1,0 +1,37 @@
+name: Code Style Check
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**/*.java'
+      - 'pom.xml'
+      - '.github/workflows/spotless.yml'
+
+jobs:
+  spotless:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+      
+      - name: Check Code Style
+        run: mvn spotless:check
+        
+      - name: Add PR Comment on Failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '❌ Code style check failed! Please run `mvn spotless:apply` locally and commit the changes.'
+            })
