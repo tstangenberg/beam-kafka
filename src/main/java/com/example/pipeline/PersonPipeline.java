@@ -11,12 +11,7 @@ import org.apache.beam.sdk.options.PipelineOptionsFactory;
 import org.apache.beam.sdk.transforms.MapElements;
 import org.apache.beam.sdk.values.TypeDescriptor;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.postgresql.ds.PGSimpleDataSource;
-import org.apache.beam.sdk.coders.AvroCoder;
-import org.apache.beam.sdk.coders.DefaultCoder;
 import org.apache.beam.sdk.coders.SerializableCoder;
-
-import javax.sql.DataSource;
 
 public class PersonPipeline {
 
