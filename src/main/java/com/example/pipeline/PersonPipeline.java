@@ -21,10 +21,9 @@ import org.apache.beam.sdk.values.PCollection;
 import org.apache.beam.sdk.values.Row;
 import org.apache.kafka.common.serialization.ByteArraySerializer;
 import org.apache.kafka.common.serialization.StringSerializer;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
+import org.apache.beam.sdk.coders.SerializableCoder;
 
 public class PersonPipeline {
 
