@@ -1,6 +1,7 @@
 package com.example.pipeline;
 
 import java.io.Serializable;
+
 import org.apache.beam.sdk.coders.DefaultCoder;
 import org.apache.beam.sdk.coders.SerializableCoder;
 
