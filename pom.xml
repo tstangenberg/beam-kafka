@@ -12,7 +12,7 @@
         <beam.version>2.65.0</beam.version>
         <kafka.version>8.0.0-ce</kafka.version>
         <testcontainers.version>1.21.2</testcontainers.version>
-        <junit.version>5.12.1</junit.version>
+        <junit.version>5.13.3</junit.version>
         <jackson.version>2.18.3</jackson.version>
     </properties>
 
